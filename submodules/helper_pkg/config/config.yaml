@@ -1,0 +1,39 @@
+# global default configuration values
+np_seed: 0
+torch_seed: 0
+device: 'cuda:2'
+batch_size: 8192
+shuffle: False
+epochs: 10
+restarts: 30
+dataset: 'MNIST' # CIFAR10 or MNIST
+model: 'MLP' # MLP or CNN
+top_dir: 'General'
+
+# Model default configuration values
+SGD_method: 'Adam' # One of: Adam, AdamW, Adagrad, RMSProp
+learning_rate: 0.001
+beta_1: 0.9
+beta_2: 0.9
+epsilon: 1e-9
+weight_decay: 0.001
+
+# Dataset method
+new_labels: 'shuffle_full' # "none", "shuffle_class" or "shuffle_full"
+
+# Dataset specific values
+MNIST:
+  input_channels: 1
+  input_dim: 784 # 1*28*28
+  hidden_layers: 2
+  hidden_dim: 1568 # 1*28*28*2
+  output_dim: 10
+  scale: 0 # Not used
+  # 196 for linear in CNN
+CIFAR10:
+  input_channels: 3
+  input_dim: 3072 # 3*32*32
+  hidden_layers: 4
+  hidden_dim: 6144 # 3*32*32*2
+  output_dim: 10
+  scale: 1

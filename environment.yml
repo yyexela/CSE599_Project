@@ -1,0 +1,13 @@
+name: cse599_project
+channels:
+  - conda-forge
+  - anaconda
+  - pytorch
+  - nvidia
+dependencies:
+  - python==3.11.8
+  - numpy=1.26.0
+  - matplotlib=3.8.0
+  - pytorch=2.0.0
+  - torchvision=0.15.2
+  - pytorch-cuda=12.1
