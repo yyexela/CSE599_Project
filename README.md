@@ -8,3 +8,7 @@ This project explores capacity loss and network plasticity. In particular, a CNN
 conda env create -f environment.yml
 conda activate cse599_project
 ```
+
+## Run code
+
+`./run_all.sh`

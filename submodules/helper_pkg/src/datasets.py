@@ -145,7 +145,8 @@ def wrap_datasets_shuffle_labels(train_dl, test_dl, new_labels=None, device=None
         # Create dummy MLP
         mlp_d, mlp_d_loss_fn, mlp_d_optimizer = models.create_MLP(name="MLP_D")
         x = x.to(device).to(float32)
-        y = mlp_d(x)
+        with torch.no_grad():
+            y = mlp_d(x)
         y = y.argmax(1)
         return x, y
 
